@@ -1,15 +1,30 @@
-# FCND - Backyard Flyer Project
-In this project, you'll set up a state machine using event-driven programming to autonomously flying a drone. You will be using flying a quadcopter in Unity simulator. After completing this assignment, you'll be familiar with sending commands and receiving incoming data from the drone. 
+### Backyard Flyer - Finite State Machine implementation for autonomously flying Drone
 
-The python code you write is similar to how the drone would be controlled from a ground station computer or an onboard flight computer. Since communication with the drone is done using MAVLink, you will be able to use your code to control an PX4 quadcopter autopilot with very little modification!
+The target of this project is to design a finite state machine using event-driven programming for autonomously flying a drone. 
+Support : flying a quadcopter in a Unity simulator.
+The written python code is similar to how the drone would be controlled from a ground station computer or an onboard flight computer. The communication with the drone is done using MAVLink.
 
-## Step 1: Download the Simulator
-If you haven't already, download the version of the simulator that's appropriate for your operating system [from this repository](https://github.com/udacity/FCND-Simulator-Releases/releases).
+-------------------------
+#### SW Architecture
 
-## Step 2: Set up your Python Environment
-If you haven't already, set up your Python environment and get all the relevant packages installed using Anaconda following instructions in [this repository](https://github.com/udacity/FCND-Term1-Starter-Kit)
+#### Command from the UdaciDrone API's `Drone`
+The  UdaciDrone API's `Drone` class delivers a list of command. They are described in [this repository](https://udacity.github.io/udacidrone/docs/drone-api.html);
 
-## Step 3: Clone this Repository
+
+####  Finite State Machine (Mealy concept : asynchonous design)
+The "Mealy machine" (asynchronous graph) described the SW architecture :
+<p align="center">
+<img src="./Finite_State_Machine.png" width="50% style = "border:none;">
+</p> 
+
+--------------------------
+##### Step 1: Download the Simulator
+Download the version of the simulator that's appropriate for your operating system [from this repository](https://github.com/udacity/FCND-Simulator-Releases/releases).
+
+##### Step 2: Set up your Python Environment
+Set up your Python environment and get all the relevant packages installed using Anaconda following instructions in [this repository](https://github.com/udacity/FCND-Term1-Starter-Kit)
+
+##### Step 3: Clone this Repository
 ```sh
 git clone https://github.com/udacity/FCND-Backyard-Flyer
 ```
@@ -77,7 +92,7 @@ Since callback functions are only called when certain drone attributes are chang
 
 ### Outgoing Commands
 
-The UdaciDrone API's `Drone` class also contains function to be able to send commands to the drone.  Here is a list of commands that you may find useful during the project:
+The UdaciDrone API's `Drone` class also contains function to be able to send commands to the drone.
 
  - `connect()`: Starts receiving messages from the drone. Blocks the code until the first message is received
  - `start()`: Start receiving messages from the drone. If the connection is not threaded, this will block the code.
@@ -204,12 +219,6 @@ def local_to_global(local_position, global_home):
 # Convert a global position (lon, lat, up) to a local position (north, east, down) relative to the home position
 def global_to_local(global_position, global_home):
 ```
-
-
-
-## Submission Requirements
-
-* Filled in backyard_flyer.py
 
 
 
