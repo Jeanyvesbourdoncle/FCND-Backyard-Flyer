@@ -3,8 +3,6 @@
 #### Target
 The target of this project is to design a finite state machine using event-driven programming for autonomously flying a drone. 
 
-Support : flying a quadcopter in a Unity simulator.
-
 The written python code is similar to how the drone would be controlled from a ground station computer or an onboard flight computer. 
 
 The communication with the drone is done using MAVLink.
@@ -74,12 +72,12 @@ The UdaciDrone API's `Drone` class also contains function to be able to send com
 The state machine is run continuously until either the mission is ended or the Mavlink connection is lost.
 
 The six states predefined for the state machine:
-* MANUAL: the drone is being controlled by the user
-* ARMING: the drone is in guided mode and being armed
-* TAKEOFF: the drone is taking off from the ground
-* WAYPOINT: the drone is flying to a specified target position
-* LANDING: the drone is landing on the ground
-* DISARMING: the drone is disarming
+* `MANUAL`: the drone is being controlled by the user
+* `ARMING`: the drone is in guided mode and being armed
+* `TAKEOFF`: the drone is taking off from the ground
+* `WAYPOINT`: the drone is flying to a specified target position
+* `LANDING`: the drone is landing on the ground
+* `DISARMING`: the drone is disarming
 
 --------------------------
 ####  SW Environment
@@ -145,16 +143,7 @@ Logs can be read using:
 t_log = Drone.read_telemetry_data(filename)
 ```
 
-The data is stored as a dictionary of message types. For each message type, there is a list of numpy arrays. For example, to access the longitude and latitude from a `MsgID.GLOBAL_POSITION`:
 
-```python
-# Time is always the first entry in the list
-time = t_log['MsgID.GLOBAL_POSITION'][0][:]
-longitude = t_log['MsgID.GLOBAL_POSITION'][1][:]
-latitude = t_log['MsgID.GLOBAL_POSITION'][2][:]
-```
-
-The data between different messages will not be time synced since they are recorded at different times.
 
 
      
