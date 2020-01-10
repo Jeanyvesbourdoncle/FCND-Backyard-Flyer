@@ -1,4 +1,6 @@
 ### Backyard Flyer - Finite State Machine implementation for autonomously flying Drone
+#### Results visualization with the simulator [here](https://github.com/Jeanyvesbourdoncle/FCND-Backyard-Flyer/blob/master/Finite_State_Machine_Asynchronous_Approach.mp4).
+
 --------------------------
 #### Target
 The target of this project is to design a finite state machine using event-driven programming for autonomously flying a drone. 
@@ -124,7 +126,8 @@ In others case, with a deadband radius = 10 meters, the speed realisation will b
 <p align="center">
 <img src="./Simulator_picture.png" width="80% style = "border:none;">
 </p> 
-								    
+
+
 --------------------------
 #### Results
 ##### Message Logging
