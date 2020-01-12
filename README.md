@@ -125,10 +125,6 @@ Information : The drones moves slowly beacuse the deadband radius is initialized
 The precision to reach a waypoint is prefered to the speed realization. 
 In others case, with a deadband radius = 10 meters, the speed realisation will be prefered as the precision.
 
-<p align="center">
-<img src="./Simulator_picture.png" width="80% style = "border:none;">
-</p> 
-
 
 --------------------------
 #### Results
